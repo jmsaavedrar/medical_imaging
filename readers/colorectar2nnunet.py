@@ -62,7 +62,7 @@ def save_volume_unet(voldata, vollabel, unnet_dir, dataset, id, ts, train_or_tes
     for i in range(voldata.shape[2]) : 
         im = Image.fromarray(voldata[:,:,i])
         lblim =   Image.fromarray(vollabel[:,:,i])
-        filename = str(id) + '-' + ts[i] + '_000.png'         
+        filename = str(id) + '-' + ts[i] + '_0000.png'         
         if train_or_test == 'train' :
             im.save(os.path.join(datadir, 'imagesTr', filename), bits = 16)
             lblim.save(os.path.join(datadir, 'labelsTr' , filename), bits = 8)
@@ -129,7 +129,7 @@ def create_dataset() :
 
 def test_images() :
     datadir ='/hd_data/nnUnet/nnUnet_raw/Dataset001_HepaticVessels-2D'
-    id = '1003-019_000'
+    id = '1003-017_000'
     imname = os.path.join(datadir, 'imagesTr', id + '.png')
     lblname = os.path.join(datadir, 'labelsTr', id + '.png')
 
